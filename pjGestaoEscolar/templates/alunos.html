@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ul>
+    <li> Alunos: </li>
+    {% for aluno in lista_alunos %}
+    <li>Nome: <a href='/aluno/{{ aluno.matricula }}'>{{ aluno.nome }}</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

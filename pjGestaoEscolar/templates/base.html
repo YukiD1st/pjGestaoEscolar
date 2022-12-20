@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> {{ titulo }} </title>
+    </head>
+    <body>
+        <!-- {% if request.user.is_authenticated %}-->
+            <header style="display: flex; justify-content: space-between; align-items: center;">
+                <nav>
+                    <a>A</a>
+                    <a>B</a>
+                    <a>C</a>
+                </nav>
+                <a href="/logout">Logout</a>
+            </header>
+            <form action="/aluno/" method="post">
+                {% csrf_token %}
+                <input type="text" name="matricula" placeholder="Pesquise uma matricula">
+                <input type="submit">
+            </form>
+            {% block content %}
+            {% endblock content %}
+        <!--{% else %}
+            <meta http-equiv="refresh" content="0; URL=/login/">
+        {% endif %}-->
+    </body>
+</html>
